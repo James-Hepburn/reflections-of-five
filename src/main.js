@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import MainMenuScene from './MainMenuScene.js';
+import IntroScene from './IntroScene.js';
 
 const config = {
   type: Phaser.AUTO,
@@ -11,7 +12,7 @@ const config = {
     width: 1280,                      
     height: 720
   },
-  scene: [MainMenuScene]
+  scene: [MainMenuScene, IntroScene]
 };
 
 const game = new Phaser.Game(config);

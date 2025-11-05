@@ -13,7 +13,7 @@ export default class MainMenuScene extends Phaser.Scene {
     const { width, height } = this.scale;
 
     const bg = this.add.image(width / 2, height / 2, 'background')
-      .setScale(4) 
+      .setScale(1) 
       .setAlpha(0.7);
 
     this.tweens.add({
@@ -45,7 +45,10 @@ export default class MainMenuScene extends Phaser.Scene {
     newGameText.on('pointerover', () => newGameText.setColor('#ffffff'));
     newGameText.on('pointerout', () => newGameText.setColor('#cccccc'));
     newGameText.on('pointerdown', () => {
-      console.log('Start game'); 
+      this.cameras.main.fadeOut(1000, 0, 0, 0); // smooth fade to black
+      this.time.delayedCall(1000, () => {
+        this.scene.start('IntroScene');
+      });
     });
 
     const continueText = this.add.text(width / 2, height / 2 + 60, 'Continue', {
