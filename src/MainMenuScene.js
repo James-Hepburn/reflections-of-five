@@ -6,7 +6,7 @@ export default class MainMenuScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('background', 'assets/images/menu_bg.png');
+    this.load.image('background', '/menu_bg.png');
   }
 
   create() {
